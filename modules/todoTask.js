@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const {v4 : uuidv4} = require('uuid');
+
 const usersTodoSchema = new mongoose.Schema({
   
   userId: {
@@ -42,6 +43,7 @@ const usersTodoSchema = new mongoose.Schema({
     required: false,
     default: Date.now(),
   },
+  
 });
 
 module.exports = mongoose.model("usersTodo", usersTodoSchema);

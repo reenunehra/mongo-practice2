@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const { boolean } = require("webidl-conversions");
+
+
 
 const usersSchema = new mongoose.Schema({
   username: {
@@ -31,5 +32,17 @@ const usersSchema = new mongoose.Schema({
     default: Date.now,
   }
 });
+
+// --------------------------------------email validate----------------------------------------
+
+// usersSchema.path('email').validate(async (email) => {
+ 
+//   const emailCount = await mongoose.models.users.countDocuments({ email }) 
+//   return !emailCount
+// }, 'Email already exists')
+
+
+// ------------------------------------------------------------------------------------------------
+
 
 module.exports = mongoose.model("users", usersSchema);
